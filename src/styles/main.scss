@@ -1,0 +1,68 @@
+@import "theme/variables.scss";
+@import "../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../node_modules/uikit/src/scss/mixins-theme.scss";
+@import "theme/_imports.scss";
+@import "components/components.scss";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $global-secondary-background;
+}
+
+.main-container {
+  background-color: #fff;
+}
+
+blockquote {
+  background-color: $global-muted-background;
+  padding: $global-gutter;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .mobile {
+    display: flex;
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile-centered {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .footer-centered {
+    float: none;
+  }
+  .icons-centered,
+  .icons-center * {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+footer {
+  border-top: 1px solid lightgray;
+}
+
+.footer-bg {
+  background: white url("https://i.ibb.co/HDLF3ph/coffee-cup.png") center /
+    cover;
+}
+
