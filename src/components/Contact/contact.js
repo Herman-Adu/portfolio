@@ -187,7 +187,12 @@ const Contact = () => {
                         placeholder="Enter your message..."
                         className="uk-textarea"
                       ></textarea>
-                      <button type="submit">submit</button>
+                      <button
+                        type="submit"
+                        class="uk-button uk-button-secondary uk-margin"
+                      >
+                        submit
+                      </button>
                     </form>
                     {/* <form
                       name="contact-form"
