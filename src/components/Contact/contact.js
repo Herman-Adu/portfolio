@@ -111,14 +111,16 @@ const Contact = () => {
                       <input
                         type="text"
                         name="name"
-                        id="form-s-text"
+                        id="name"
                         placeholder="Enter your name..."
                         className="uk-input"
                       />
                       <input
-                        name="email"
-                        placeholder="name@name.com"
                         type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your E-Mail address..."
+                        className="uk-input"
                       />
                       <textarea name="message" />
                       <button>Send</button>
