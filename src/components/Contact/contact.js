@@ -149,7 +149,7 @@ const Contact = () => {
                         onChange={handleChange}
                         value={formState.name}
                         placeholder="Enter your name..."
-                        className="uk-input"
+                        className="uk-input uk-margin-small-bottom"
                       />
                       <label className="uk-form-label" htmlFor="name">
                         Subject
@@ -161,7 +161,7 @@ const Contact = () => {
                         onChange={handleChange}
                         value={formState.subject}
                         placeholder="Enter a subject..."
-                        className="uk-input"
+                        className="uk-input uk-margin-small-bottom"
                       />
                       <label className="uk-form-label" htmlFor="name">
                         email
@@ -173,7 +173,7 @@ const Contact = () => {
                         onChange={handleChange}
                         value={formState.email}
                         placeholder="Enter your email..."
-                        className="uk-input"
+                        className="uk-input uk-margin-small-bottom"
                       />
                       <label className="uk-form-label" htmlFor="name">
                         message
