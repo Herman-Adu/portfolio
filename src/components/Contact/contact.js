@@ -1,7 +1,37 @@
-import React from "react"
+import React, { useState } from "react"
 import { Title } from ".."
 
 const Contact = () => {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+  })
+
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleChange = e => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formState }),
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
   return (
     <section id="contact" className="uk-section uk-section-muted ">
       <div className="uk-container uk-container-center">
@@ -99,38 +129,36 @@ const Contact = () => {
                 <div className="uk-panel">
                   <div className="uk-margin">
                     <form
+                      onSubmit={handleSubmit}
                       name="contact-form"
                       method="post"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
                     >
-                      <p>
-                        <label>
-                          Your Name: <input type="text" name="name" />
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          Your Email: <input type="email" name="email" />
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          Your Role:{" "}
-                          <select name="role[]" multiple>
-                            <option value="leader">Leader</option>
-                            <option value="follower">Follower</option>
-                          </select>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          Message: <textarea name="message"></textarea>
-                        </label>
-                      </p>
-                      <p>
-                        <button type="submit">Send</button>
-                      </p>
+                      <input
+                        type="hidden"
+                        name="form-name"
+                        value="contact-form"
+                      />
+                      <label htmlFor="name">Name</label>
+                      <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        onChange={handleChange}
+                        value={formState.name}
+                        placeholder="Enter your name..."
+                      />
+                      <label htmlFor="name">email</label>
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        onChange={handleChange}
+                        value={formState.email}
+                        placeholder="Enter your name..."
+                      />
+                      <button type="submit">submit</button>
                     </form>
                     {/* <form
                       name="contact-form"
@@ -141,18 +169,19 @@ const Contact = () => {
                     {/* <input name="name" placeholder="Your Name" type="text" /> */}
                     {/* <label className="uk-form-label" htmlFor="name">
                         Name
-                      </label> */}
-                    {/* <input
+                      </label>
+                      <input
                         name="name"
                         placeholder="Enter your name..."
                         className="uk-input"
-                      />
-                      <input
+                      /> */}
+                    {/* <input
                         name="email"
                         placeholder="name@name.com"
+                        type="email"
                         className="uk-input"
-                      />
-                      <textarea name="message" />
+                      /> */}
+                    {/* <textarea name="message" />
                       <button>Send</button>
                     </form> */}
                     {/* <form name="contact-form" method="post" data-netlify="true">
