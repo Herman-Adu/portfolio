@@ -121,6 +121,7 @@ const Contact = () => {
                           required
                         ></textarea>
                       </p>
+                      <div data-netlify-captcha></div>
                       <p>
                         <input type="submit" value="Submit message" />
                       </p>
