@@ -131,7 +131,7 @@ const Contact = () => {
                         <input
                           type="text"
                           name="name"
-                          id="form-s-text"
+                          //id="form-s-text"
                           placeholder="Enter your name..."
                           className="uk-input"
                         />
@@ -141,10 +141,9 @@ const Contact = () => {
                           E-Mail
                         </label> */}
                         <input
-                          type="text"
                           name="email"
-                          id="form-s-text"
                           placeholder="Enter your E-Mail address..."
+                          type="email"
                           className="uk-input"
                         />
                       </div>
@@ -153,10 +152,10 @@ const Contact = () => {
                           Subject
                         </label> */}
                         <input
-                          type="text"
+                          //type="text"
                           name="subject"
-                          id="form-s-text"
                           placeholder="Enter your subject..."
+                          type="subject"
                           className="uk-input"
                         />
                       </div>
