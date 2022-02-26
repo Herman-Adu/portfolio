@@ -111,7 +111,7 @@ const Contact = () => {
                       <input
                         type="text"
                         name="name"
-                        id="form-s-text"
+                        //id="form-s-text"
                         placeholder="Enter your name..."
                         className="uk-input"
                       />
