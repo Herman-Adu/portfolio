@@ -161,6 +161,7 @@ const Contact = () => {
                         id="email"
                         type="email"
                         name="email"
+                        vonChange={handleChange}
                         value={formState.email}
                         placeholder="Enter your name..."
                       />
