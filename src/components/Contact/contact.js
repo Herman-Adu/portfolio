@@ -98,29 +98,23 @@ const Contact = () => {
               <div className="uk-grid-item-match uk-flex-middle uk-width-expand@m">
                 <div className="uk-panel">
                   <div className="uk-margin">
-                    <form
+                    {/*<form
                       name="contact-form"
                       method="post"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
                     >
-                      {/* <input name="name" placeholder="Your Name" type="text" /> */}
-                      {/* <label className="uk-form-label" htmlFor="name">
+                      <input name="name" placeholder="Your Name" type="text" /> 
+                      <label className="uk-form-label" htmlFor="name">
                         Name
-                      </label> */}
+                      </label>
                       <input
-                        name="name"
-                        placeholder="Your Name"
-                        type="text"
-                        className="uk-input"
-                      />
-                      {/*  <input
                         type="text"
                         name="name"
-                        //id="form-s-text"
+                        id="form-s-text"
                         placeholder="Enter your name..."
                         className="uk-input"
-                      /> */}
+                      />
                       <input
                         name="email"
                         placeholder="name@name.com"
@@ -128,12 +122,12 @@ const Contact = () => {
                       />
                       <textarea name="message" />
                       <button>Send</button>
-                    </form>
-                    {/* <form name="contact-form" method="post" data-netlify="true">
+                    </form> */}
+                    <form name="contact-form" method="post" data-netlify="true">
                       <div className="uk-margin">
-                        <label className="uk-form-label" htmlFor="name">
+                        {/* <label className="uk-form-label" htmlFor="name">
                           Name
-                        </label>
+                        </label> */}
                         <input
                           type="text"
                           name="name"
@@ -143,9 +137,9 @@ const Contact = () => {
                         />
                       </div>
                       <div className="uk-margin">
-                        <label className="uk-form-label" htmlFor="email">
+                        {/* <label className="uk-form-label" htmlFor="email">
                           E-Mail
-                        </label>
+                        </label> */}
                         <input
                           type="text"
                           name="email"
@@ -155,9 +149,9 @@ const Contact = () => {
                         />
                       </div>
                       <div className="uk-margin">
-                        <label className="uk-form-label" htmlFor="subject">
+                        {/* <label className="uk-form-label" htmlFor="subject">
                           Subject
-                        </label>
+                        </label> */}
                         <input
                           type="text"
                           name="subject"
@@ -167,9 +161,9 @@ const Contact = () => {
                         />
                       </div>
                       <div className="uk-margin">
-                        <label className="uk-form-label" htmlFor="message">
+                        {/* <label className="uk-form-label" htmlFor="message">
                           Message
-                        </label>
+                        </label> */}
                         <textarea
                           name="message"
                           id="messafe"
@@ -181,7 +175,7 @@ const Contact = () => {
                           Send
                         </button>
                       </div>
-                    </form> */}
+                    </form>
                   </div>
                 </div>
               </div>
