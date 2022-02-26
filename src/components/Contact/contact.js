@@ -138,7 +138,9 @@ const Contact = () => {
                       data-netlify-honeypot="bot-field"
                     >
                       <input type="hidden" name="form-name" value="contact" />
-                      <label htmlFor="name">Name</label>
+                      <label className="uk-form-label" htmlFor="name">
+                        Name
+                      </label>
                       <input
                         id="name"
                         type="text"
@@ -146,8 +148,11 @@ const Contact = () => {
                         onChange={handleChange}
                         value={formState.name}
                         placeholder="Enter your name..."
+                        className="uk-input"
                       />
-                      <label htmlFor="name">Subject</label>
+                      <label className="uk-form-label" htmlFor="name">
+                        Subject
+                      </label>
                       <input
                         id="subject"
                         type="text"
@@ -155,8 +160,11 @@ const Contact = () => {
                         onChange={handleChange}
                         value={formState.subject}
                         placeholder="Subject..."
+                        className="uk-input"
                       />
-                      <label htmlFor="name">email</label>
+                      <label className="uk-form-label" htmlFor="name">
+                        email
+                      </label>
                       <input
                         id="email"
                         type="email"
@@ -164,8 +172,11 @@ const Contact = () => {
                         onChange={handleChange}
                         value={formState.email}
                         placeholder="Enter your name..."
+                        className="uk-input"
                       />
-                      <label htmlFor="name">message</label>
+                      <label className="uk-form-label" htmlFor="name">
+                        message
+                      </label>
                       <textarea
                         id="message"
                         type="text"
@@ -174,6 +185,7 @@ const Contact = () => {
                         onChange={handleChange}
                         value={formState.message}
                         placeholder="Enter your message..."
+                        className="uk-textarea"
                       ></textarea>
                       <button type="submit">submit</button>
                     </form>
