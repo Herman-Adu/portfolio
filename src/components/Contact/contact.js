@@ -6,6 +6,7 @@ const Contact = () => {
     name: "",
     email: "",
     subject: "",
+    message: "",
   })
 
   const encode = data => {
@@ -164,6 +165,13 @@ const Contact = () => {
                         value={formState.email}
                         placeholder="Enter your name..."
                       />
+                      <label htmlFor="name">message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Enter your message..."
+                      ></textarea>
                       <button type="submit">submit</button>
                     </form>
                     {/* <form
