@@ -5,6 +5,7 @@ const Contact = () => {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
+    subject: "",
   })
 
   const encode = data => {
@@ -144,6 +145,15 @@ const Contact = () => {
                         onChange={handleChange}
                         value={formState.name}
                         placeholder="Enter your name..."
+                      />
+                      <label htmlFor="name">Subject</label>
+                      <input
+                        id="subject"
+                        type="text"
+                        name="subject"
+                        onChange={handleChange}
+                        value={formState.subject}
+                        placeholder="Subject..."
                       />
                       <label htmlFor="name">email</label>
                       <input
