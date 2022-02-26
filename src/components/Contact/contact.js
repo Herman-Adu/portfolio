@@ -130,16 +130,12 @@ const Contact = () => {
                   <div className="uk-margin">
                     <form
                       onSubmit={handleSubmit}
-                      name="contact-form"
+                      name="contact"
                       method="post"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
                     >
-                      <input
-                        type="hidden"
-                        name="form-name"
-                        value="contact-form"
-                      />
+                      <input type="hidden" name="form-name" value="contact" />
                       <label htmlFor="name">Name</label>
                       <input
                         id="name"
