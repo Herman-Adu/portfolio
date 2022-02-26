@@ -161,15 +161,17 @@ const Contact = () => {
                         id="email"
                         type="email"
                         name="email"
-                        onChange={handleChange}
                         value={formState.email}
                         placeholder="Enter your name..."
                       />
                       <label htmlFor="name">message</label>
                       <textarea
                         id="message"
+                        type="text"
                         name="message"
                         rows="5"
+                        onChange={handleChange}
+                        value={formState.message}
                         placeholder="Enter your message..."
                       ></textarea>
                       <button type="submit">submit</button>
