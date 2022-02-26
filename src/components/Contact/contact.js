@@ -50,6 +50,7 @@ const Contact = () => {
                 <div className="uk-panel">
                   <h1 className="uk-heading-hero">Let's talk</h1>
                   <div className="uk-divider-small"></div>
+                  <div className="uk-margin-medium-top" />
                   <div className="uk-margin uk-width-xlarge">
                     <p>
                       If you need more information about any of our services, do
@@ -70,7 +71,7 @@ const Contact = () => {
                   </div>
                   <div className="uk-margin">
                     <div
-                      className="uk-flex-middle uk-grid-small uk-child-width-auto"
+                      className="uk-flex-middle uk-grid-small uk-child-width-auto uk-margin-medium-top"
                       uk-grid="true"
                     >
                       <div>
@@ -159,7 +160,7 @@ const Contact = () => {
                         name="subject"
                         onChange={handleChange}
                         value={formState.subject}
-                        placeholder="Subject..."
+                        placeholder="Enter a subject..."
                         className="uk-input"
                       />
                       <label className="uk-form-label" htmlFor="name">
@@ -171,7 +172,7 @@ const Contact = () => {
                         name="email"
                         onChange={handleChange}
                         value={formState.email}
-                        placeholder="Enter your name..."
+                        placeholder="Enter your email..."
                         className="uk-input"
                       />
                       <label className="uk-form-label" htmlFor="name">
@@ -194,83 +195,6 @@ const Contact = () => {
                         submit
                       </button>
                     </form>
-                    {/* <form
-                      name="contact-form"
-                      method="post"
-                      data-netlify="true"
-                      data-netlify-honeypot="bot-field"
-                    > */}
-                    {/* <input name="name" placeholder="Your Name" type="text" /> */}
-                    {/* <label className="uk-form-label" htmlFor="name">
-                        Name
-                      </label>
-                      <input
-                        name="name"
-                        placeholder="Enter your name..."
-                        className="uk-input"
-                      /> */}
-                    {/* <input
-                        name="email"
-                        placeholder="name@name.com"
-                        type="email"
-                        className="uk-input"
-                      /> */}
-                    {/* <textarea name="message" />
-                      <button>Send</button>
-                    </form> */}
-                    {/* <form name="contact-form" method="post" data-netlify="true">
-                      <div className="uk-margin">
-                        <label className="uk-form-label" htmlFor="name">
-                          Name
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          id="form-s-text"
-                          placeholder="Enter your name..."
-                          className="uk-input"
-                        />
-                      </div>
-                      <div className="uk-margin">
-                        <label className="uk-form-label" htmlFor="email">
-                          E-Mail
-                        </label>
-                        <input
-                          type="text"
-                          name="email"
-                          id="form-s-text"
-                          placeholder="Enter your E-Mail address..."
-                          className="uk-input"
-                        />
-                      </div>
-                      <div className="uk-margin">
-                        <label className="uk-form-label" htmlFor="subject">
-                          Subject
-                        </label>
-                        <input
-                          type="text"
-                          name="subject"
-                          id="form-s-text"
-                          placeholder="Enter your subject..."
-                          className="uk-input"
-                        />
-                      </div>
-                      <div className="uk-margin">
-                        <label className="uk-form-label" htmlFor="message">
-                          Message
-                        </label>
-                        <textarea
-                          name="message"
-                          id="messafe"
-                          rows="5"
-                          placeholder="Enter your message..."
-                          className="uk-textarea"
-                        ></textarea>
-                        <button class="uk-button uk-button-secondary uk-margin">
-                          Send
-                        </button>
-                      </div>
-                    </form> */}
                   </div>
                 </div>
               </div>
