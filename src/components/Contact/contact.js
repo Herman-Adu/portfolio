@@ -98,12 +98,7 @@ const Contact = () => {
               <div className="uk-grid-item-match uk-flex-middle uk-width-expand@m">
                 <div className="uk-panel">
                   <div className="uk-margin">
-                    <form
-                      name="contact-form"
-                      method="post"
-                      data-netlify="true"
-                      data-netlify-honeypot="bot-field"
-                    >
+                    <form name="contact-form" method="post" data-netlify="true">
                       <div className="uk-margin">
                         <label className="uk-form-label" htmlFor="name">
                           Name
@@ -152,7 +147,7 @@ const Contact = () => {
                           className="uk-textarea"
                         ></textarea>
                         <button class="uk-button uk-button-secondary uk-margin">
-                          Button
+                          Send
                         </button>
                       </div>
                     </form>
