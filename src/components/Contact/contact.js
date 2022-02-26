@@ -98,7 +98,12 @@ const Contact = () => {
               <div className="uk-grid-item-match uk-flex-middle uk-width-expand@m">
                 <div className="uk-panel">
                   <div className="uk-margin">
-                    <form name="contact-form" method="POST" data-netlify="true">
+                    <form
+                      name="contact-form"
+                      method="post"
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
+                    >
                       <p>
                         <label>
                           Your Name: <input type="text" name="name" />
