@@ -104,7 +104,17 @@ const Contact = () => {
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
                     >
-                      <input name="name" placeholder="Your Name" type="text" />
+                      {/* <input name="name" placeholder="Your Name" type="text" /> */}
+                      <label className="uk-form-label" htmlFor="name">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="form-s-text"
+                        placeholder="Enter your name..."
+                        className="uk-input"
+                      />
                       <input
                         name="email"
                         placeholder="name@name.com"
