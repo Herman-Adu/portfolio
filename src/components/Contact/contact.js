@@ -105,9 +105,9 @@ const Contact = () => {
                       data-netlify-honeypot="bot-field"
                     >
                       {/* <input name="name" placeholder="Your Name" type="text" /> */}
-                      <label className="uk-form-label" htmlFor="name">
+                      {/* <label className="uk-form-label" htmlFor="name">
                         Name
-                      </label>
+                      </label> */}
                       <input
                         name="name"
                         placeholder="Your Name"
