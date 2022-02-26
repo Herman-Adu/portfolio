@@ -109,17 +109,15 @@ const Contact = () => {
                         Name
                       </label> */}
                       <input
-                        type="text"
                         name="name"
-                        id="name"
                         placeholder="Enter your name..."
+                        type="text"
                         className="uk-input"
                       />
                       <input
-                        type="email"
                         name="email"
-                        id="email"
                         placeholder="Enter your E-Mail address..."
+                        type="email"
                         className="uk-input"
                       />
                       <textarea name="message" />
