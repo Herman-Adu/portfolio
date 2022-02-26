@@ -111,12 +111,11 @@ const Contact = () => {
                       <input
                         name="name"
                         placeholder="Enter your name..."
-                        type="text"
                         className="uk-input"
                       />
                       <input
                         name="email"
-                        placeholder="Enter your E-Mail address..."
+                        placeholder="name@name.com"
                         type="email"
                         className="uk-input"
                       />
