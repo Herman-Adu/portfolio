@@ -137,6 +137,7 @@ const Contact = () => {
                       method="post"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
+                      data-netlify-recaptcha="true"
                     >
                       <input type="hidden" name="form-name" value="contact" />
                       <label className="uk-form-label" htmlFor="name">
@@ -188,6 +189,7 @@ const Contact = () => {
                         placeholder="Enter your message..."
                         className="uk-textarea"
                       ></textarea>
+                      <div data-netlify-recaptcha="true"></div>
                       <button
                         type="submit"
                         class="uk-button uk-button-secondary uk-margin"
