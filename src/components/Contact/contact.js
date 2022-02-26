@@ -116,7 +116,6 @@ const Contact = () => {
                       <input
                         name="email"
                         placeholder="name@name.com"
-                        type="email"
                         className="uk-input"
                       />
                       <textarea name="message" />
