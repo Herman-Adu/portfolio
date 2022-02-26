@@ -42,7 +42,7 @@ const Contact = () => {
         </div>
         <div
           className="uk-section uk-section-muted"
-          uk-height-viewport="expand: true"
+          //uk-height-viewport="expand: true"
         >
           <div className="uk-container uk-container-large">
             <div className="uk-grid-large uk-margin" uk-grid="true">
