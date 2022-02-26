@@ -109,12 +109,18 @@ const Contact = () => {
                         Name
                       </label>
                       <input
+                        name="name"
+                        placeholder="Your Name"
+                        type="text"
+                        className="uk-input"
+                      />
+                      {/*  <input
                         type="text"
                         name="name"
                         //id="form-s-text"
                         placeholder="Enter your name..."
                         className="uk-input"
-                      />
+                      /> */}
                       <input
                         name="email"
                         placeholder="name@name.com"
