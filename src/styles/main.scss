@@ -4,18 +4,13 @@
 @import "theme/_imports.scss";
 @import "components/components.scss";
 
-
 html,
 body {
   //height: 100%;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  -webkit-scroll-behavior: smooth;
- 
-
 }
-
 
 body {
   background-color: $global-default-background;
