@@ -50,10 +50,7 @@ const Contact = () => {
         <div className="uk-container uk-container-xsmall uk-text-center uk-section uk-padding-remove-top uk-padding-remove-bottom">
           <Title title="Contact Me" styleClass="underline" />
         </div>
-        <div
-          className="uk-section uk-section-muted"
-          //uk-height-viewport="expand: true"
-        >
+        <div className="uk-section uk-section-muted">
           <div className="uk-container uk-container-large">
             <div className="uk-grid-large uk-margin" uk-grid="true">
               <div className="uk-grid-item-match uk-flex-middle uk-width-expand@m">

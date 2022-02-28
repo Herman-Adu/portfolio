@@ -15,15 +15,6 @@ const OffCanvas = () => {
         />
         <div className="bar-content uk-position-relative">
           <ul className="uk-nav-default uk-nav-parent-icon" uk-nav="true">
-            {/* <li className="uk-nav-header ">
-              <StaticImage
-                src="../../images/adudev-Logo.png"
-                placeholder="blurred"
-                alt="A kitten"
-                layout="fixed"
-                height={40}
-              />
-            </li> */}
             <li className="uk-active">
               <Link
                 className="uk-nav-header"

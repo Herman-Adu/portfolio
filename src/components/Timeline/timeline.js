@@ -16,7 +16,7 @@ const Timeline = () => {
           className="uk-slider-container-offset uk-margin-small-right uk-margin-small-left"
           uk-slider="true"
         >
-          <div className="uk-position-relative uk-visible-toggle" tabindex="-1">
+          <div className="uk-position-relative uk-visible-toggle" tabindex="0">
             <ul className="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-grid">
               <li>
                 <div>
