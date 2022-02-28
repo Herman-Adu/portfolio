@@ -122,6 +122,7 @@ const Education = () => {
                     </li>
                   </ul>
                 </div>
+                <ul className="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
                 <div className="uk-hidden@l">
                   <a
                     className="uk-position-center-left uk-position-small"

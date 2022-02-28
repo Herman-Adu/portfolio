@@ -22,6 +22,15 @@ const Contact = () => {
     })
   }
 
+  const resetForm = () => {
+    setFormState({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
+  }
+
   const handleSubmit = e => {
     fetch("/", {
       method: "POST",
@@ -29,6 +38,7 @@ const Contact = () => {
       body: encode({ "form-name": "contact", ...formState }),
     })
       .then(() => alert("Success!"))
+      .then(resetForm())
       .catch(error => alert(error))
 
     e.preventDefault()
