@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { navigate } from "gatsby"
-const axios = require("axios").default
+//const axios = require("axios").default
 
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
@@ -46,7 +46,11 @@ const useForm = (callback, validate) => {
     event.preventDefault()
     setErrors(validate(values))
 
-    fetch("/", {
+    if (Object.keys(errors).length === 0) {
+      submit()
+    }
+
+    /*  fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...values }),
@@ -63,7 +67,6 @@ const useForm = (callback, validate) => {
           const error = (data && data.message) || response.status
           return Promise.reject(error)
         }
-        console.log("Data:", data)
         setData(data)
         setSuccess(true)
         resetFormValues()
@@ -72,7 +75,8 @@ const useForm = (callback, validate) => {
       })
       .catch(error => {
         setServerError("There was an error!", error)
-      })
+      }) */
+
     //.then(() => alert("Success!"))
     //.then(resetForm())
     //.catch(error => alert(error))
@@ -94,6 +98,35 @@ const useForm = (callback, validate) => {
     } catch (err) {
       setServerError(err)
     } */
+  }
+
+  const submit = () => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...values }),
+    })
+      .then(async response => {
+        const isJson = response.headers
+          .get("content-type")
+          ?.includes("application/json")
+        const data = isJson && (await response.json())
+
+        // check for error response
+        if (!response.ok) {
+          // get error message from body or default to response status
+          const error = (data && data.message) || response.status
+          return Promise.reject(error)
+        }
+        setData(data)
+        setSuccess(true)
+        resetFormValues()
+        setIsSubmitting(true)
+        alert("success")
+      })
+      .catch(error => {
+        setServerError("There was an error!", error)
+      })
   }
 
   useEffect(() => {
