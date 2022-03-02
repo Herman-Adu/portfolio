@@ -4,7 +4,7 @@ import useForm from "../../hooks/useForm"
 import validate from "../../constants/validateContact"
 
 const Contact = () => {
-  const [values, setValues] = useState({
+  /* const [values, setValues] = useState({
     name: "",
     email: "",
     subject: "",
@@ -46,6 +46,35 @@ const Contact = () => {
       .catch(error => alert(error))
 
     e.preventDefault()
+  } */
+
+  const [username, setUsername] = useState("")
+  const {
+    handleChange,
+    handleSubmit,
+    values,
+    errors,
+    data,
+    success,
+    serverError,
+  } = useForm(Submit, validate)
+
+  function Submit() {
+    if (success) {
+      setUsername(data.name)
+    } else {
+      setUsername("")
+    }
+
+    // check if there were server errors and set the error below the success div uk-alert-danger
+    //console.log("Submit function - success:", success)
+    //console.log("Submit function - user:", user)
+    //console.log("Submit function - data.name:", data.name)
+
+    // if there is a server error return server error jsx under the form
+    //console.log("Submit function - data:", data)
+    //console.log("Submit function - data:", serverError)
+    //console.log("Submit function: Submitted Successfully")
   }
 
   return (
@@ -162,6 +191,11 @@ const Contact = () => {
                         value={values.name}
                         className="uk-input uk-margin-small-bottom"
                       />
+                      {errors.name && (
+                        <div className="uk-alert-danger" uk-alert="true">
+                          <p className="uk-form-danger">{errors.name}</p>
+                        </div>
+                      )}
                       <label className="uk-form-label" htmlFor="name">
                         Subject
                       </label>
@@ -174,6 +208,11 @@ const Contact = () => {
                         placeholder="Enter a subject..."
                         className="uk-input uk-margin-small-bottom"
                       />
+                      {errors.subject && (
+                        <div className="uk-alert-danger" uk-alert="true">
+                          <p className="uk-form-danger">{errors.subject}</p>
+                        </div>
+                      )}
                       <label className="uk-form-label" htmlFor="name">
                         email
                       </label>
@@ -186,6 +225,11 @@ const Contact = () => {
                         placeholder="Enter your email..."
                         className="uk-input uk-margin-small-bottom"
                       />
+                      {errors.email && (
+                        <div className="uk-alert-danger" uk-alert="true">
+                          <p className="uk-form-danger">{errors.email}</p>
+                        </div>
+                      )}
                       <label className="uk-form-label" htmlFor="name">
                         message
                       </label>
@@ -198,7 +242,12 @@ const Contact = () => {
                         value={values.message}
                         placeholder="Enter your message..."
                         className="uk-textarea"
-                      ></textarea>
+                      />
+                      {errors.message && (
+                        <div className="uk-alert-danger" uk-alert="true">
+                          <p className="uk-form-danger">{errors.message}</p>
+                        </div>
+                      )}
                       <button
                         type="submit"
                         class="uk-button uk-button-secondary uk-margin"

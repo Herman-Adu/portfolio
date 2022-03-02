@@ -42,11 +42,15 @@ const useForm = (callback, validate) => {
 
     // async axios call and post the values to strapi
     try {
-      fetch("/")
-        .then(() => alert("Success!"))
-        .then(resetFormValues())
-        .catch(error => alert(error))
-      event.preventDefault()
+      let response = await axios.post("http://localhost:8000/#contact", values)
+      // navigate back to contact and clear history
+      navigate("/#contact")
+
+      // set data, success and reset the form
+      setData(response.data)
+      setSuccess(true)
+      resetFormValues()
+      setIsSubmitting(true)
     } catch (err) {
       setServerError(err)
     }
