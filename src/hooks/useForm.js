@@ -28,12 +28,6 @@ const useForm = (callback, validate) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [success, setSuccess] = useState(false)
 
-  const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
-
   const handleChange = event => {
     const { name, value } = event.target
     setValues({
@@ -48,20 +42,11 @@ const useForm = (callback, validate) => {
 
     // async axios call and post the values to strapi
     try {
-      let response = await axios.post("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...values }),
-      })
-      // navigate back to contact and clear history
-      //navigate("/contact")
-
-      // set data, success and reset the form
-      setData(response.data)
-      console.log("Data", response.data)
-      setSuccess(true)
-      resetFormValues()
-      setIsSubmitting(true)
+      fetch("/")
+        .then(() => alert("Success!"))
+        .then(resetFormValues())
+        .catch(error => alert(error))
+      event.preventDefault()
     } catch (err) {
       setServerError(err)
     }

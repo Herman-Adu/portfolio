@@ -4,60 +4,74 @@ import useForm from "../../hooks/useForm"
 import validate from "../../constants/validateContact"
 
 const Contact = () => {
-  /* const [formState, setFormState] = useState({
+  const [response, setReponse] = useState({})
+  const [success, setSuccess] = useState(false)
+  const [values, setValues] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  }) */
+  })
 
-  /* const encode = data => {
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+
+  const encode = data => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&")
-  } */
+  }
 
-  /* const handleChange = e => {
-    setFormState({
-      ...formState,
+  const handleChange = e => {
+    setValues({
+      ...values,
       [e.target.name]: e.target.value,
     })
-  } */
+  }
 
-  /* const resetForm = () => {
-    setFormState({
+  const resetForm = () => {
+    setValues({
       name: "",
       email: "",
       subject: "",
       message: "",
     })
-  }*/
+  }
 
-  /* const handleSubmit = e => {
-    fetch("/")
-      .then(() => alert("Success!"))
-      .then(resetForm())
-      .catch(error => alert(error))
+  let succe
 
+  const handleSubmit = async e => {
     e.preventDefault()
-  } */
+    setErrors(validate(values))
 
-  const {
-    handleChange,
-    handleSubmit,
-    values,
-    errors,
-    data,
-    success,
-    serverError,
-  } = useForm(Submit, validate)
-
-  function Submit() {
-    if (success) {
-      console.log("success")
-    } else {
-      console.log("failed")
+    if (Object.keys(errors).length === 0) {
+      try {
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({ "form-name": "contact", ...values }),
+        })
+        console.log("response:", response)
+      } catch (errors) {
+        console.log("errors:", errors)
+      }
     }
+
+    //console.log("Errors:", errors)
+
+    //.then(() => alert("Success!"))
+    //.then(resetForm())
+    //.then(setSuccess(true))
+    //.catch(error => alert(error))
+    //const data = await response.json()
+
+    //console.log("Data:", data)
+
+    //e.preventDefault()
   }
 
   return (
@@ -170,9 +184,9 @@ const Contact = () => {
                           id="name"
                           type="text"
                           name="name"
+                          placeholder="Enter your name..."
                           onChange={handleChange}
                           value={values.name}
-                          placeholder="Enter your name..."
                           className="uk-input uk-margin-small-bottom"
                         />
                         {errors.name && (
@@ -236,6 +250,11 @@ const Contact = () => {
                           placeholder="Enter your message..."
                           className="uk-textarea"
                         />
+                        {errors.message && (
+                          <div className="uk-alert-danger" uk-alert="true">
+                            <p className="uk-form-danger">{errors.message}</p>
+                          </div>
+                        )}
                       </div>
 
                       <button
@@ -244,35 +263,6 @@ const Contact = () => {
                       >
                         submit
                       </button>
-                      <br />
-                      {success && (
-                        <div className="uk-alert-success" uk-alert="true">
-                          <a
-                            href="/"
-                            className="uk-alert-close"
-                            uk-close="true"
-                          >
-                            {null}
-                          </a>
-                          <p>
-                            {/*  Thank you {username}, your message has been sent */}
-                            Thank you, your message has been sent successfully!
-                          </p>
-                        </div>
-                      )}
-                      {serverError.error && (
-                        <div className="uk-alert-danger" uk-alert="true">
-                          <a
-                            href="/"
-                            className="uk-alert-close"
-                            uk-close="true"
-                          >
-                            {null}
-                          </a>
-                          {/*  <p>Sorry {username}, please try again later!</p> */}
-                          <p>Sorry, please try again later!</p>
-                        </div>
-                      )}
                     </form>
                   </div>
                 </div>
