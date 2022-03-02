@@ -4,16 +4,7 @@ import useForm from "../../hooks/useForm"
 import validate from "../../constants/validateContact"
 
 const Contact = () => {
-  const [response, setReponse] = useState({})
-  const [success, setSuccess] = useState(false)
   const [values, setValues] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-
-  const [errors, setErrors] = useState({
     name: "",
     email: "",
     subject: "",
@@ -42,36 +33,19 @@ const Contact = () => {
     })
   }
 
-  let succe
-
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault()
-    setErrors(validate(values))
 
-    if (Object.keys(errors).length === 0) {
-      try {
-        const response = await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", ...values }),
-        })
-        console.log("response:", response)
-      } catch (errors) {
-        console.log("errors:", errors)
-      }
-    }
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...values }),
+    })
+      .then(() => alert("Success!"))
+      .then(resetForm())
+      .catch(error => alert(error))
 
-    //console.log("Errors:", errors)
-
-    //.then(() => alert("Success!"))
-    //.then(resetForm())
-    //.then(setSuccess(true))
-    //.catch(error => alert(error))
-    //const data = await response.json()
-
-    //console.log("Data:", data)
-
-    //e.preventDefault()
+    e.preventDefault()
   }
 
   return (
@@ -176,87 +150,55 @@ const Contact = () => {
                       data-netlify-honeypot="bot-field"
                     >
                       <input type="hidden" name="form-name" value="contact" />
-                      <div>
-                        <label className="uk-form-label" htmlFor="name">
-                          Name
-                        </label>
-                        <input
-                          id="name"
-                          type="text"
-                          name="name"
-                          placeholder="Enter your name..."
-                          onChange={handleChange}
-                          value={values.name}
-                          className="uk-input uk-margin-small-bottom"
-                        />
-                        {errors.name && (
-                          <div className="uk-alert-danger" uk-alert="true">
-                            <p className="uk-form-danger">{errors.name}</p>
-                          </div>
-                        )}
-                      </div>
-
-                      <div>
-                        <label className="uk-form-label" htmlFor="name">
-                          email
-                        </label>
-                        <input
-                          id="email"
-                          type="email"
-                          name="email"
-                          onChange={handleChange}
-                          value={values.email}
-                          placeholder="Enter your email..."
-                          className="uk-input uk-margin-small-bottom"
-                        />
-                        {errors.email && (
-                          <div className="uk-alert-danger" uk-alert="true">
-                            <p className="uk-form-danger">{errors.email}</p>
-                          </div>
-                        )}
-                      </div>
-
-                      <div>
-                        <label className="uk-form-label" htmlFor="name">
-                          Subject
-                        </label>
-                        <input
-                          id="subject"
-                          type="text"
-                          name="subject"
-                          onChange={handleChange}
-                          value={values.subject}
-                          placeholder="Enter a subject..."
-                          className="uk-input uk-margin-small-bottom"
-                        />
-                        {errors.subject && (
-                          <div className="uk-alert-danger" uk-alert="true">
-                            <p className="uk-form-danger">{errors.subject}</p>
-                          </div>
-                        )}
-                      </div>
-
-                      <div>
-                        <label className="uk-form-label" htmlFor="name">
-                          message
-                        </label>
-                        <textarea
-                          id="message"
-                          type="text"
-                          name="message"
-                          rows="5"
-                          onChange={handleChange}
-                          value={values.message}
-                          placeholder="Enter your message..."
-                          className="uk-textarea"
-                        />
-                        {errors.message && (
-                          <div className="uk-alert-danger" uk-alert="true">
-                            <p className="uk-form-danger">{errors.message}</p>
-                          </div>
-                        )}
-                      </div>
-
+                      <label className="uk-form-label" htmlFor="name">
+                        Name
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name..."
+                        onChange={handleChange}
+                        value={values.name}
+                        className="uk-input uk-margin-small-bottom"
+                      />
+                      <label className="uk-form-label" htmlFor="name">
+                        Subject
+                      </label>
+                      <input
+                        id="subject"
+                        type="text"
+                        name="subject"
+                        onChange={handleChange}
+                        value={values.subject}
+                        placeholder="Enter a subject..."
+                        className="uk-input uk-margin-small-bottom"
+                      />
+                      <label className="uk-form-label" htmlFor="name">
+                        email
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        onChange={handleChange}
+                        value={values.email}
+                        placeholder="Enter your email..."
+                        className="uk-input uk-margin-small-bottom"
+                      />
+                      <label className="uk-form-label" htmlFor="name">
+                        message
+                      </label>
+                      <textarea
+                        id="message"
+                        type="text"
+                        name="message"
+                        rows="5"
+                        onChange={handleChange}
+                        value={values.message}
+                        placeholder="Enter your message..."
+                        className="uk-textarea"
+                      ></textarea>
                       <button
                         type="submit"
                         class="uk-button uk-button-secondary uk-margin"
