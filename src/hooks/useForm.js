@@ -42,7 +42,10 @@ const useForm = (callback, validate) => {
 
     // async axios call and post the values to strapi
     try {
-      let response = await axios.post("http://localhost:8000/#contact", values)
+      let response = await axios.post(
+        "https://portfolio-adudev.netlify.app/#contact",
+        values
+      )
       // navigate back to contact and clear history
       navigate("/#contact")
 
