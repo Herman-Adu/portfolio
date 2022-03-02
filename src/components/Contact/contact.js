@@ -172,7 +172,7 @@ const Contact = () => {
                 <div className="uk-panel">
                   <div className="uk-margin">
                     <form
-                      onSubmit={handleSubmit}
+                      //onSubmit={handleSubmit}
                       name="contact"
                       method="post"
                       data-netlify="true"
@@ -250,10 +250,39 @@ const Contact = () => {
                       )}
                       <button
                         type="submit"
+                        onClick={handleSubmit}
                         class="uk-button uk-button-secondary uk-margin"
                       >
                         submit
                       </button>
+                      <br />
+                      {success && (
+                        <div className="uk-alert-success" uk-alert="true">
+                          <a
+                            href="/"
+                            className="uk-alert-close"
+                            uk-close="true"
+                          >
+                            {null}
+                          </a>
+                          <p>
+                            Thank you {username}, your message has been sent
+                            successfully!
+                          </p>
+                        </div>
+                      )}
+                      {serverError.error && (
+                        <div className="uk-alert-danger" uk-alert="true">
+                          <a
+                            href="/"
+                            className="uk-alert-close"
+                            uk-close="true"
+                          >
+                            {null}
+                          </a>
+                          <p>Sorry {username}, please try again later!</p>
+                        </div>
+                      )}
                     </form>
                   </div>
                 </div>

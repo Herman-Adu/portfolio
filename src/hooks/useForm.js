@@ -36,12 +36,46 @@ const useForm = (callback, validate) => {
     })
   }
 
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
   const handleSubmit = async event => {
     event.preventDefault()
     setErrors(validate(values))
 
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...values }),
+    })
+      .then(async response => {
+        const isJson = response.headers
+          .get("content-type")
+          ?.includes("application/json")
+        const data = isJson && (await response.json())
+
+        // check for error response
+        if (!response.ok) {
+          // get error message from body or default to response status
+          const error = (data && data.message) || response.status
+          return Promise.reject(error)
+        }
+
+        //this.setState({ postId: data.id })
+      })
+      .catch(error => {
+        //this.setState({ errorMessage: error.toString() })
+        console.error("There was an error!", error)
+      })
+    //.then(() => alert("Success!"))
+    //.then(resetForm())
+    //.catch(error => alert(error))
+
     // async axios call and post the values to strapi
-    try {
+    /*  try {
       let response = await axios.post(
         "https://portfolio-adudev.netlify.app/#contact",
         values
@@ -56,7 +90,7 @@ const useForm = (callback, validate) => {
       setIsSubmitting(true)
     } catch (err) {
       setServerError(err)
-    }
+    } */
   }
 
   useEffect(() => {
