@@ -63,12 +63,15 @@ const useForm = (callback, validate) => {
           const error = (data && data.message) || response.status
           return Promise.reject(error)
         }
-
-        //this.setState({ postId: data.id })
+        console.log("Data:", data)
+        setData(data)
+        setSuccess(true)
+        resetFormValues()
+        setIsSubmitting(true)
+        alert("success")
       })
       .catch(error => {
-        //this.setState({ errorMessage: error.toString() })
-        console.error("There was an error!", error)
+        setServerError("There was an error!", error)
       })
     //.then(() => alert("Success!"))
     //.then(resetForm())
