@@ -42,35 +42,13 @@ const useForm = (callback, validate) => {
       .join("&")
   }
 
-  useEffect(() => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...values }),
-    })
-      .then(res => res.json())
-      .then(
-        result => {
-          setData(result)
-          setSuccess(true)
-          resetFormValues()
-          setIsSubmitting(true)
-          alert("success")
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        error => {
-          setIsSubmitting(false)
-          setServerError(error)
-        }
-      )
-  }, [resetFormValues, values])
-
   const handleSubmit = async event => {
     event.preventDefault()
     setErrors(validate(values))
-    //submit()
+
+    if (Object.keys(errors).length === 0) {
+      submit()
+    }
 
     /*  fetch("/", {
       method: "POST",
@@ -122,7 +100,7 @@ const useForm = (callback, validate) => {
     } */
   }
 
-  /* const submit = () => {
+  const submit = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -149,7 +127,7 @@ const useForm = (callback, validate) => {
       .catch(error => {
         setServerError("There was an error!", error)
       })
-  } */
+  }
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
