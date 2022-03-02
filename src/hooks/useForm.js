@@ -42,13 +42,16 @@ const useForm = (callback, validate) => {
       .join("&")
   }
 
+  useEffect(() => {
+    if (Object.keys(errors).length === 0) {
+      callback()
+    }
+  }, [errors, submit])
+
   const handleSubmit = async event => {
     event.preventDefault()
     setErrors(validate(values))
-
-    if (Object.keys(errors).length === 0) {
-      submit()
-    }
+    //submit()
 
     /*  fetch("/", {
       method: "POST",
