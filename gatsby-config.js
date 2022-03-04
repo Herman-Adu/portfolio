@@ -1,9 +1,13 @@
-require("dotenv").config({
+/* require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
+}) */
+
+require("dotenv").config({
+  path: `.env`,
 })
 
 const strapiConfig = {
-  apiURL: process.env.STRAPI_API_URL,
+  apiURL: process.env.STRAPI_API_URL || "http://localhost:1337",
   accessToken: process.env.STRAPI_TOKEN,
   collectionTypes: ["Post", "Project", "User"],
   singleTypes: ["Home Page"],
