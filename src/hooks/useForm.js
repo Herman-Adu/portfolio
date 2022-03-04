@@ -49,55 +49,6 @@ const useForm = (callback, validate) => {
     if (Object.keys(errors).length === 0) {
       submit()
     }
-
-    /*  fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...values }),
-    })
-      .then(async response => {
-        const isJson = response.headers
-          .get("content-type")
-          ?.includes("application/json")
-        const data = isJson && (await response.json())
-
-        // check for error response
-        if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status
-          return Promise.reject(error)
-        }
-        setData(data)
-        setSuccess(true)
-        resetFormValues()
-        setIsSubmitting(true)
-        alert("success")
-      })
-      .catch(error => {
-        setServerError("There was an error!", error)
-      }) */
-
-    //.then(() => alert("Success!"))
-    //.then(resetForm())
-    //.catch(error => alert(error))
-
-    // async axios call and post the values to strapi
-    /*  try {
-      let response = await axios.post(
-        "https://portfolio-adudev.netlify.app/#contact",
-        values
-      )
-      // navigate back to contact and clear history
-      navigate("/#contact")
-
-      // set data, success and reset the form
-      setData(response.data)
-      setSuccess(true)
-      resetFormValues()
-      setIsSubmitting(true)
-    } catch (err) {
-      setServerError(err)
-    } */
   }
 
   const submit = () => {

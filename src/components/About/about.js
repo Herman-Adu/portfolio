@@ -4,7 +4,7 @@ import { Title } from ".."
 
 const About = () => {
   return (
-    <section classNameName="uk-section uk-section-default">
+    <section className="uk-section uk-section-default">
       <div
         id="about-me"
         className="uk-container uk-container-xsmall uk-text-center uk-section uk-padding-remove-bottom"

@@ -107,14 +107,137 @@ blockquote {
 }
 
 
+
+
+
+
+.uk-card {
+  border-top: 2px solid;
+  position: relative;
+  transition: box-shadow 0.15s ease-out;
+  border-radius: 3px;
+}
+.uk-card:hover {
+  box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.045);
+}
+.uk-card .uk-inline {
+  z-index: 99;
+}
+.uk-card .uk-card-footer {
+  padding: 0.55rem 1rem;
+}
+.uk-card .uk-card-header {
+  padding: 0.55rem 1rem;
+}
+.uk-card .cat-txt {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.01em;
+  
+}
+.nature-card .uk-card {
+  border-top-color: #1e87f0;
+}
+
+.uk-subnav li a {
+  border-radius: 9px;
+}
+
+/* .uk-subnav li.uk-active a {
+  background-color: #fd8f45;
+} */
+
 .orange-subnav li.uk-active a {
-  background-color: #fd8f45 !important;
+  background-color: #fd8f45;
 }
 
 .green-subnav li.uk-active a {
-  background-color: green !important;
+  background-color: green;
 }
 
+/* .uk-subnav li.uk-active:nth-child(1) a {
+  background-color: #fd8f45;
+}
+
+.uk-subnav li.uk-active:nth-child(2) a {
+  background-color: #fd8f45;
+}
+
+.uk-subnav li.uk-active:nth-child(3) a {
+  background-color: #fd8f45;
+}
+
+.uk-subnav li.uk-active:nth-child(4) a {
+  background-color: #fd8f45;
+}
+.uk-subnav li.uk-active:nth-child(5) a {
+  background-color: #fd8f45;
+} 
+
+.uk-subnav li.uk-active:nth-child(6) a {
+  background-color: #fd8f45;
+} */
+.nature-card .uk-card .cat-txt {
+  color: #1e87f0;
+}
+.music-card .uk-card {
+  border-top-color: #8630f0;
+}
+.music-card .uk-card .cat-txt {
+  color: #8630f0;
+}
+.design-card .uk-card {
+  //border-top-color: #e84df0;
+  border-top-color: #ff7f00;
+}
+.design-card .uk-card .cat-txt {
+  //color: #e84df0;
+  color: orange;
+}
+.photo-card .uk-card {
+  border-top-color: green;
+}
+
+.blog-card .uk-card .cat-txt {
+  //color: #e84df0;
+  color: orange;
+}
+.blog-card .uk-card {
+  border-top: none;
+}
+
+.photo-card .uk-card .cat-txt {
+  color: green;
+}
+.uk-card .uk-overlay-primary {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  //text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.project-stack {
+  margin-bottom: 1rem !important;
+}
+.project-stack span {
+  display: inline-block;
+  background: #cccccc;
+  color: #808080;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  //margin-top: 0.5rem;
+}
+.about-stack span {
+  margin-top: 0.5rem;
+}
 
 
 

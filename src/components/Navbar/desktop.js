@@ -52,9 +52,9 @@ const Desktop = () => {
             >
               Timeline
             </Link>
-            <div class="uk-navbar-dropdown">
-              <ul class="uk-nav uk-navbar-dropdown-nav">
-                <li class="uk-active">
+            <div className="uk-navbar-dropdown">
+              <ul className="uk-nav uk-navbar-dropdown-nav">
+                <li className="uk-active">
                   <Link
                     to="/#experience"
                     //uk-tooltip="title: Technologies; pos: right"

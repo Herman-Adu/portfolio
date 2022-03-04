@@ -1,3 +1,30 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const strapiConfig = {
+  apiURL: process.env.STRAPI_API_URL,
+  accessToken: process.env.STRAPI_TOKEN,
+  collectionTypes: ["Post", "Project", "User"],
+  singleTypes: ["Home Page"],
+  inlineImages: {
+    typesToParse: {
+      Post: ["body"],
+      ComponentBlockBody: ["text"],
+    },
+  },
+  // Only include specific locale.
+  locale: "en", // default to all
+  // Include drafts in build.
+  preview: true, // defaults to false
+  // Use application token.
+  // token: "xxx",
+  // Add additional headers.
+  headers: {},
+  // Enable/disable cache.
+  cache: false,
+}
+
 module.exports = {
   siteMetadata: {
     title: `Herman Adu Personal Portfolio`,
@@ -17,6 +44,11 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: "gatsby-source-strapi",
+      options: strapiConfig,
+    },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
