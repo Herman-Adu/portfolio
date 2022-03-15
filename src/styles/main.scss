@@ -134,7 +134,6 @@ blockquote {
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.01em;
-  
 }
 .nature-card .uk-card {
   border-top-color: #1e87f0;
@@ -144,72 +143,40 @@ blockquote {
   border-radius: 9px;
 }
 
-/* .uk-subnav li.uk-active a {
-  background-color: #fd8f45;
-} */
-
 .orange-subnav li.uk-active a {
-  background-color: #fd8f45;
+  //color: #fd8f45;
+  background-color: #fd8f45 !important;
 }
 
-.green-subnav li.uk-active a {
-  background-color: green;
-}
-
-/* .uk-subnav li.uk-active:nth-child(1) a {
-  background-color: #fd8f45;
-}
-
-.uk-subnav li.uk-active:nth-child(2) a {
-  background-color: #fd8f45;
-}
-
-.uk-subnav li.uk-active:nth-child(3) a {
-  background-color: #fd8f45;
-}
-
-.uk-subnav li.uk-active:nth-child(4) a {
-  background-color: #fd8f45;
-}
-.uk-subnav li.uk-active:nth-child(5) a {
-  background-color: #fd8f45;
-} 
-
-.uk-subnav li.uk-active:nth-child(6) a {
-  background-color: #fd8f45;
-} */
 .nature-card .uk-card .cat-txt {
   color: #1e87f0;
 }
+
 .music-card .uk-card {
-  border-top-color: #8630f0;
+  border-top-color: #f11b0c;
 }
 .music-card .uk-card .cat-txt {
-  color: #8630f0;
+  color: #f11b0c;
 }
+
 .design-card .uk-card {
   //border-top-color: #e84df0;
   border-top-color: #ff7f00;
 }
+
 .design-card .uk-card .cat-txt {
   //color: #e84df0;
   color: orange;
 }
+
 .photo-card .uk-card {
   border-top-color: green;
-}
-
-.blog-card .uk-card .cat-txt {
-  //color: #e84df0;
-  color: orange;
-}
-.blog-card .uk-card {
-  border-top: none;
 }
 
 .photo-card .uk-card .cat-txt {
   color: green;
 }
+
 .uk-card .uk-overlay-primary {
   padding: 0.5rem;
   text-align: center;
@@ -221,6 +188,7 @@ blockquote {
 .project-stack {
   margin-bottom: 1rem !important;
 }
+
 .project-stack span {
   display: inline-block;
   background: #cccccc;
@@ -235,9 +203,36 @@ blockquote {
   font-size: 0.75rem;
   //margin-top: 0.5rem;
 }
-.about-stack span {
-  margin-top: 0.5rem;
+
+
+.gradient-text {
+  font-weight: 900;
+
+  font-size: 26px;
+  background: linear-gradient(45deg, #ff7f00, #a7a4a4);
+  
+  //background: linear-gradient(135deg, #ff7f00 60%, grey);
+  //background: linear-gradient(0.25turn, #2c2929, 10%, #ff7f00);
+  //background: linear-gradient(0.25turn, #1e87f0, 10%, #ff7f00);
+  //background: linear-gradient(red 0%, orange 25%, yellow 50%, green 75%, blue 100%);
+  
+
+
+
+  
+
+  
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 16px;
+
 }
+
+
 
 
 

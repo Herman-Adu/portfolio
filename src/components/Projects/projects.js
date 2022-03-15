@@ -1,40 +1,43 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
 import { Title, Project } from ".."
 
 import Gpt3Image from "../../images/gpt3.png"
 import GerichtImage from "../../images/gericht-restaurant.png"
-import DPayImage from "../../images/react-support-project-2.png"
 import DollaImage from "../../images/dolla-finance-project.png"
 
 import ExplorixImage from "../../images/explorix-hero.png"
 import PortfolioImage from "../../images/portflio-project.png"
 
+import DPayImage from "../../images/react-support-project-2.png"
+import CrwnImage from "../../images/crwn-clothing-project.png"
+import ChatImage from "../../images/chap-app-project.png"
+import ShopfyImage from "../../images/shopify-prototype.png"
+
+import RegularJoeImage from "../../images/reguler-joes.png"
+import BlogImage from "../../images/Gatsby-blog-v2-project.png"
+
 const Projects = ({ projects }) => {
-  console.log("Projects:", projects)
+  //console.log("Projects:", projects)
 
   let reactProj = projects.edges.filter(function (project) {
     //console.log("projects.edges:", project)
     return project.node.Type === "react"
   })
-  console.log("React Projects:", reactProj)
 
   let staticProj = projects.edges.filter(function (project) {
+    //console.log("Static Projects:", staticProj)
     return project.node.Type === "static"
   })
-  console.log("Static Projects:", staticProj)
 
   let fullStackProj = projects.edges.filter(function (project) {
+    //console.log("Full Stack Projects:", fullStackProj)
     return project.node.Type === "fullstack"
   })
-  console.log("Static Projects:", fullStackProj)
 
   let HeadlessProj = projects.edges.filter(function (project) {
-    return project.node.Type === "fullstack"
+    //console.log("Headless CMS Projects:", HeadlessProj)
+    return project.node.Type === "headless"
   })
-  //console.log("Static Projects:", HeadlessProj)
 
   return (
     <section
@@ -50,123 +53,147 @@ const Projects = ({ projects }) => {
           <div className="uk-text-center">
             <ul className="uk-subnav uk-subnav-pill orange-subnav uk-flex uk-flex-center uk-margin-medium-top">
               <li
-                className="uk-active uk-margin-small-bottom orange-subnav"
+                className="uk-active uk-margin-small-bottom"
                 uk-filter-control="[data-color='white'], [data-color='blue'], [data-color='black'], [data-color='muted']"
               >
-                <Link className="uk-border-pill orange-subnav" to="/">
+                <a className="uk-border-pill" href="/">
                   All
-                </Link>
+                </a>
               </li>
               <li
                 className="uk-margin-small-bottom"
                 uk-filter-control="[data-color='white']"
               >
-                <Link to="/">React</Link>
+                <a className="uk-border-pill" href="/">
+                  React
+                </a>
               </li>
               <li
                 className="uk-margin-small-bottom"
                 uk-filter-control="[data-color='blue']"
               >
-                <Link to="/">Static</Link>
+                <a className="uk-border-pill" href="/">
+                  Static
+                </a>
               </li>
               <li
                 className="uk-margin-small-bottom"
                 uk-filter-control="[data-color='black']"
               >
-                <Link to="/">Full-Stack</Link>
+                <a className="uk-border-pill" href="/">
+                  Full-Stack
+                </a>
               </li>
               <li
                 className="uk-margin-small-bottom"
                 uk-filter-control="[data-color='muted']"
               >
-                <Link to="/">Headless CMS</Link>
+                <a className="uk-border-pill" href="/">
+                  Headless CMS
+                </a>
               </li>
             </ul>
           </div>
 
           <ul
-            className="js-filter uk-child-width-1-2 uk-child-width-1-3@m uk-text-center"
+            className="js-filter uk-child-width-1-1@s uk-child-width-1-2@m  uk-child-width-1-3@l uk-text-center"
             uk-grid="true"
           >
             <li data-color="white">
               <Project
                 projects={reactProj[0]}
                 image={Gpt3Image}
-                style="design-card"
+                styleClass="design-card"
               />
             </li>
             <li data-color="muted">
-              <div className="uk-card uk-background-muted uk-card-body">
-                Item
-              </div>
+              <Project
+                projects={HeadlessProj[0]}
+                image={RegularJoeImage}
+                styleClass="music-card"
+              />
             </li>
             <li data-color="blue">
               <Project
                 projects={staticProj[0]}
                 image={ExplorixImage}
-                style="nature-card"
+                styleClass="photo-card"
               />
             </li>
             <li data-color="white">
               <Project
                 projects={reactProj[1]}
                 image={GerichtImage}
-                style="design-card"
+                styleClass="design-card"
               />
             </li>
             <li data-color="muted">
-              <div className="uk-card uk-background-muted uk-card-body">
-                Item
-              </div>
+              <Project
+                projects={HeadlessProj[1]}
+                image={BlogImage}
+                styleClass="music-card"
+              />
             </li>
             <li data-color="white">
               <Project
                 projects={reactProj[2]}
                 image={DollaImage}
-                style="design-card"
+                styleClass="design-card"
               />
             </li>
             <li data-color="black">
-              <div className="uk-card uk-card-secondary uk-card-body">Item</div>
+              <Project
+                projects={fullStackProj[0]}
+                image={DPayImage}
+                styleClass="nature-card"
+              />
             </li>
             <li data-color="black">
-              <div className="uk-card uk-card-secondary uk-card-body">Item</div>
+              <Project
+                projects={fullStackProj[1]}
+                image={CrwnImage}
+                styleClass="nature-card"
+              />
             </li>
             <li data-color="blue">
               <Project
                 projects={staticProj[1]}
                 image={PortfolioImage}
-                style="nature-card"
+                styleClass="photo-card"
               />
             </li>
-            <li data-color="muted">
+            {/* <li data-color="muted">
               <div className="uk-card uk-background-muted uk-card-body">
                 Item
-              </div>
-            </li>
+              </div> 
+            </li>*/}
             <li data-color="black">
-              <div className="uk-card uk-card-secondary uk-card-body">Item</div>
-            </li>
-            <li data-color="blue">
-              <div className="uk-card uk-card-primary uk-card-body">Item</div>
-            </li>
-            <li data-color="white">
               <Project
-                projects={reactProj[3]}
-                image={DPayImage}
-                style="design-card"
+                projects={fullStackProj[2]}
+                image={ChatImage}
+                styleClass="nature-card"
               />
             </li>
-            <li data-color="blue">
+            {/* <li data-color="blue">
               <div className="uk-card uk-card-primary uk-card-body">Item</div>
-            </li>
-            <li data-color="muted">
+            </li> */}
+            {/* <li data-color="white">
+              <div className="uk-card uk-card-primary uk-card-body">Item</div>
+            </li> */}
+            {/* <li data-color="blue">
+              <div className="uk-card uk-card-primary uk-card-body">Item</div>
+            </li> */}
+            {/* <li data-color="muted">
               <div className="uk-card uk-background-muted uk-card-body">
                 Item
               </div>
-            </li>
+            </li> */}
             <li data-color="black">
-              <div className="uk-card uk-card-secondary uk-card-body">Item</div>
+              <Project
+                projects={fullStackProj[3]}
+                image={ShopfyImage}
+                styleClass="nature-card"
+              />
             </li>
           </ul>
         </div>

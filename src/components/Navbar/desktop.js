@@ -11,12 +11,12 @@ const Desktop = () => {
     >
       {/* left section for desktop nav view  */}
       <div className="uk-navbar-left uk-margin-small-left uk-visible@m">
-        <Link to="/" className="uk-navbar-item   uk-logo">
+        <Link to="/#home" className="uk-navbar-item   uk-logo">
           <StaticImage
             src="../../images/adudev-Logo.png"
             placeholder="blurred"
             //height={250}
-            alt="A kitten"
+            alt="Adudev logo"
           />
         </Link>
       </div>
@@ -77,6 +77,9 @@ const Desktop = () => {
                   >
                     Achievements
                   </Link>
+                </li>
+                <li>
+                  <Link to="/page-2">Page 2</Link>
                 </li>
               </ul>
             </div>

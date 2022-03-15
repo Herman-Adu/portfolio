@@ -4,50 +4,6 @@ import useForm from "../../hooks/useForm"
 import validate from "../../constants/validateContact"
 
 const Contact = () => {
-  /* const [values, setValues] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-
-  const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
-
-  const handleChange = e => {
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const resetForm = () => {
-    setValues({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault()
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...values }),
-    })
-      .then(() => alert("Success!"))
-      .then(resetForm())
-      .catch(error => alert(error))
-
-    e.preventDefault()
-  } */
-
   const [username, setUsername] = useState("")
   const {
     handleChange,
@@ -65,22 +21,15 @@ const Contact = () => {
     } else {
       setUsername("")
     }
-
-    // check if there were server errors and set the error below the success div uk-alert-danger
-    //console.log("Submit function - success:", success)
-    //console.log("Submit function - user:", user)
-    //console.log("Submit function - data.name:", data.name)
-
-    // if there is a server error return server error jsx under the form
-    //console.log("Submit function - data:", data)
-    //console.log("Submit function - data:", serverError)
-    //console.log("Submit function: Submitted Successfully")
   }
 
   return (
-    <section id="contact" className="uk-section uk-section-muted ">
+    <section className="uk-section uk-section-muted ">
       <div className="uk-container uk-container-center">
-        <div className="uk-container uk-container-xsmall uk-text-center uk-section uk-padding-remove-top uk-padding-remove-bottom">
+        <div
+          id="contact"
+          className="uk-container uk-container-xsmall uk-text-center uk-section uk-padding-remove-top uk-padding-remove-bottom"
+        >
           <Title title="Contact Me" styleClass="underline" />
         </div>
         <div className="uk-section uk-section-muted">
@@ -93,20 +42,20 @@ const Contact = () => {
                   <div className="uk-margin-medium-top" />
                   <div className="uk-margin uk-width-xlarge">
                     <p>
-                      If you need more information about any of our services, do
-                      not hesitate to contact us.
+                      If you need more information about me, my experience,
+                      education or projects, do not hesitate to contact me.
                     </p>
                     <p>
-                      Phone: (907) 230-0259
+                      Phone: (07850) 153-097
                       <br />
-                      Email: info@yourdomain.com
+                      Email: herman@adudev.co.uk
                       <br />
                       <br />
                     </p>
                     <p>
-                      8263 Courtland Dr.
+                      4 Farm Close, Taplow.
                       <br />
-                      Romeoville, IL 60446
+                      Maidenhead, SL6 0QF
                     </p>
                   </div>
                   <div className="uk-margin">
@@ -118,30 +67,10 @@ const Contact = () => {
                         <a
                           href="/"
                           target="_blank"
-                          title="Facebook"
+                          title="Twitter!"
                           className="uk-button uk-button-text"
                         >
-                          <span uk-icon="facebook"></span>
-                        </a>
-                      </div>
-                      <div>
-                        <a
-                          href="/"
-                          target="_blank"
-                          title="Instagram"
-                          className="uk-button uk-button-text"
-                        >
-                          <span uk-icon="instagram"></span>
-                        </a>
-                      </div>
-                      <div>
-                        <a
-                          href="/"
-                          target="_blank"
-                          title="Pinterest"
-                          className="uk-button uk-button-text"
-                        >
-                          <span uk-icon="pinterest"></span>
+                          <span uk-icon="twitter"></span>
                         </a>
                       </div>
                       <div>
@@ -158,10 +87,10 @@ const Contact = () => {
                         <a
                           href="/"
                           target="_blank"
-                          title="Yelp!"
+                          title="Facebook"
                           className="uk-button uk-button-text"
                         >
-                          <span uk-icon="yelp"></span>
+                          <span uk-icon="facebook"></span>
                         </a>
                       </div>
                     </div>
@@ -251,7 +180,7 @@ const Contact = () => {
                       <button
                         type="submit"
                         onClick={handleSubmit}
-                        class="uk-button uk-button-secondary uk-margin"
+                        className="uk-button uk-button-secondary uk-margin"
                       >
                         submit
                       </button>

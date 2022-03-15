@@ -9,7 +9,7 @@ require("dotenv").config({
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL || "http://localhost:1337",
   accessToken: process.env.STRAPI_TOKEN,
-  collectionTypes: ["Post", "Project", "User"],
+  collectionTypes: ["Post", "Project"],
   singleTypes: ["Home Page"],
   inlineImages: {
     typesToParse: {

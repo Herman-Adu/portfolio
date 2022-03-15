@@ -9,12 +9,16 @@ const Mobile = () => {
   return (
     <nav className="uk-navbar-container uk-hidden@m" uk-navbar="true">
       {/* left section for mobile nav view */}
-      <div className="uk-navbar-left uk-logo">
-        <StaticImage
-          src="../../images/adudev-Logo.png"
-          placeholder="blurred"
-          alt="A kitten"
-        />
+
+      <div className="uk-navbar-left uk-margin-small-left">
+        <Link to="/#home" className="uk-navbar-left   uk-logo">
+          <StaticImage
+            src="../../images/adudev-Logo.png"
+            placeholder="blurred"
+            //height={250}
+            alt="Adudev logo"
+          />
+        </Link>
       </div>
 
       {/* right section for mobile nav view toggle button for the off canvas section */}

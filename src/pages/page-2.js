@@ -1,15 +1,16 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+//import { Link } from "gatsby"
 import HeroImage from "../images/hero.jpg"
 import Image1 from "../images/marketing-2.svg"
-import Logo from "../images/marketing-logo.svg"
+//import Logo from "../images/marketing-logo.svg"
 import Marketing1 from "../images/marketing-1.svg"
 import Marketing2 from "../images/marketing-1.svg"
 import Marketing3 from "../images/marketing-1.svg"
 import Marketing4 from "../images/marketing-1.svg"
 import Marketing5 from "../images/marketing-1.svg"
-import Marketing6 from "../images/marketing-1.svg"
-import Marketing7 from "../images/marketing-1.svg"
+//import Marketing6 from "../images/marketing-1.svg"
+//import Marketing7 from "../images/marketing-1.svg"
 import Marketing8 from "../images/marketing-8.svg"
 import Marketing9 from "../images/marketing-9.svg"
 import Testimonial from "../images/testimonial.jpg"
@@ -22,76 +23,16 @@ import logo5 from "../images/logo-5.svg"
 import logo6 from "../images/logo-6.svg"
 import logo7 from "../images/logo-7.svg"
 import logo8 from "../images/logo-8.svg"
-import logo9 from "../images/logo-9.svg"
+//import logo9 from "../images/logo-9.svg"
 
-import { Layout, Seo } from "../components"
+import CV from "../docs/cv.pdf"
+
+import { Layout } from "../components"
 
 const SecondPage = () => (
-  <>
+  <Layout>
     {/* <!-- TOP --> */}
     <div className="top-wrap uk-position-relative uk-light uk-background-secondary">
-      {/* <!-- NAV --> */}
-      <div
-        //class="nav"
-        data-uk-sticky="cls-active: uk-background-secondary uk-box-shadow-medium; top: 100vh; animation: uk-animation-slide-top"
-      >
-        <div className="uk-container">
-          <nav
-            className="uk-navbar uk-navbar-container uk-navbar-transparent"
-            uk-navbar="true"
-          >
-            <div className="uk-navbar-left">
-              <div className="uk-navbar-item uk-padding-remove-horizontal">
-                <a className="uk-logo" title="Logo" href="">
-                  <img src={Logo} alt="Logo" />
-                </a>
-              </div>
-            </div>
-            <div className="uk-navbar-right">
-              <ul className="uk-navbar-nav uk-visible@s">
-                <li className="uk-active uk-visible@m">
-                  <a href="" uk-icon="home"></a>
-                </li>
-                <li>
-                  <a href="">Features</a>
-                </li>
-                <li>
-                  <a href="#" uk-icon="chevron-down">
-                    Products
-                  </a>
-                  <div className="uk-navbar-dropdown">
-                    <ul className="uk-nav uk-navbar-dropdown-nav">
-                      <li>
-                        <a href="#">Big Data</a>
-                      </li>
-                      <li>
-                        <a href="#">Marketing</a>
-                      </li>
-                      <li>
-                        <a href="#">Analytics</a>
-                      </li>
-                      <li>
-                        <a href="#">AI Lab</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <a href="">Testimonials</a>
-                </li>
-              </ul>
-              <a
-                className="uk-navbar-toggle uk-navbar-item uk-hidden@s"
-                uk-toggle="true"
-                uk-navbar-toggle-icon="true"
-                href="#offcanvas-nav"
-              ></a>
-            </div>
-          </nav>
-        </div>
-      </div>
-      {/* <!-- /NAV --> */}
-
       <div className="uk-cover-container uk-light uk-flex uk-flex-middle top-wrap-height">
         {/* <!-- TOP CONTAINER --> */}
         <div
@@ -99,22 +40,41 @@ const SecondPage = () => (
           uk-parallax="y: 0,50; easing:0; opacity:0.2"
         >
           <div
-            className="uk-width-1-2@s"
+            className="uk-width-2-3@s"
             uk-scrollspy="cls: uk-animation-slide-right-medium; target: > *; delay: 150"
           >
-            <h6 className="uk-text-primary uk-margin-small-bottom">RESEARCH</h6>
-            <h1 className="uk-margin-remove-top">Innovation in your hands.</h1>
+            <StaticImage
+              src="../images/adudev-light.png"
+              placeholder="blurred"
+              height={135}
+              alt="Adudev Large Logo"
+            />
+            <h6 className="uk-text-primary uk-margin-small-bottom">
+              PORTFOLIO
+            </h6>
+            <h1 className="uk-margin-remove-top">Innovation in our hands.</h1>
             <p className="subtitle-text uk-visible@s">
               Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
               minim veniam, quis nostrud exercitation ullamco{" "}
             </p>
             <a
-              href="#"
+              href={CV}
+              title="Herman Adu CV"
+              alt="Herman Adu CV"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="uk-button uk-button-primary uk-border-pill"
+              uk-scrollspy-classname="uk-animation-fade"
+            >
+              My CV
+            </a>{" "}
+            <a
+              href="/"
               title="Learn More"
               className="uk-button uk-button-primary uk-border-pill"
-              uk-scrollspy-className="uk-animation-fade"
+              uk-scrollspy-classname="uk-animation-fade"
             >
-              LEARN MORE
+              Articles
             </a>
           </div>
         </div>
@@ -125,7 +85,7 @@ const SecondPage = () => (
           src={HeroImage}
           alt=""
           uk-cover="true"
-          uk-img="true"
+          //uk-img="true"
           uk-parallax="opacity: 1,0.1; easing:0"
         />
         {/* <!-- /TOP IMAGE --> */}
@@ -135,7 +95,11 @@ const SecondPage = () => (
           href="#content"
           uk-scroll="duration: 500"
           uk-icon="icon: arrow-down; ratio: 2"
-        ></a>
+          aria-label="content below"
+          alt="content below"
+        >
+          {null}
+        </a>
       </div>
     </div>
     {/* <!-- /TOP --> */}
@@ -148,17 +112,17 @@ const SecondPage = () => (
             uk-switcher="connect: .uk-switcher; animation: uk-animation-fade"
           >
             <li>
-              <a className="uk-border-pill" href="#">
+              <a className="uk-border-pill" href="/">
                 Discover
               </a>
             </li>
             <li>
-              <a className="uk-border-pill" href="#">
+              <a className="uk-border-pill" href="/">
                 Benefits
               </a>
             </li>
             <li>
-              <a className="uk-border-pill" href="#">
+              <a className="uk-border-pill" href="/">
                 Features
               </a>
             </li>
@@ -190,14 +154,14 @@ const SecondPage = () => (
                     <h4>Great stuff</h4>
                     <p>
                       Ut enim ad minim veniam, quis nostrud magna aliqua
-                      exercitation. <a href="">Learn more.</a>
+                      exercitation. <a href="/">Learn more.</a>
                     </p>
                   </div>
                   <div>
                     <h4>Data analysis</h4>
                     <p>
                       Ut enim ad minim veniam, quis nostrud magna aliqua
-                      exercitation. <a href="">Learn more.</a>
+                      exercitation. <a href="/">Learn more.</a>
                     </p>
                   </div>
                 </div>
@@ -213,7 +177,7 @@ const SecondPage = () => (
               <div>
                 <img src={Marketing8} alt="" uk-img="true" />
               </div>
-              <div uk-scrollspy-className="uk-animation-slide-right-medium">
+              <div uk-scrollspy-classname="uk-animation-slide-right-medium">
                 <h6 className="uk-text-primary">MAIN REASONS</h6>
                 <h2 className="uk-margin-small-top">
                   Take decisions with real time data based on users interaction.
@@ -228,14 +192,14 @@ const SecondPage = () => (
                     <h4>Great stuff</h4>
                     <p>
                       Ut enim ad minim veniam, quis nostrud magna aliqua
-                      exercitation. <a href="">Learn more.</a>
+                      exercitation. <a href="/">Learn more.</a>
                     </p>
                   </div>
                   <div>
                     <h4>Data analysis</h4>
                     <p>
                       Ut enim ad minim veniam, quis nostrud magna aliqua
-                      exercitation. <a href="">Learn more.</a>
+                      exercitation. <a href="/">Learn more.</a>
                     </p>
                   </div>
                 </div>
@@ -251,7 +215,7 @@ const SecondPage = () => (
               <div>
                 <img src={Marketing9} alt="" uk-img="true" />
               </div>
-              <div uk-scrollspy-className="uk-animation-slide-right-medium">
+              <div uk-scrollspy-classname="uk-animation-slide-right-medium">
                 <h6 className="uk-text-primary">MAIN REASONS</h6>
                 <h2 className="uk-margin-small-top">
                   Take decisions with real time data based on users interaction.
@@ -266,14 +230,14 @@ const SecondPage = () => (
                     <h4>Great stuff</h4>
                     <p>
                       Ut enim ad minim veniam, quis nostrud magna aliqua
-                      exercitation. <a href="">Learn more.</a>
+                      exercitation. <a href="/">Learn more.</a>
                     </p>
                   </div>
                   <div>
                     <h4>Data analysis</h4>
                     <p>
                       Ut enim ad minim veniam, quis nostrud magna aliqua
-                      exercitation. <a href="">Learn more.</a>
+                      exercitation. <a href="/">Learn more.</a>
                     </p>
                   </div>
                 </div>
@@ -296,7 +260,7 @@ const SecondPage = () => (
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <a
-              href="#"
+              href="/"
               className="uk-button uk-button-primary uk-border-pill"
               uk-icon="arrow-right"
             >
@@ -305,7 +269,7 @@ const SecondPage = () => (
           </div>
           <div uk-scrollspy="cls: uk-animation-fade">
             {/* <Image1 /> */}
-            <img src={Image1} uk-img="true" alt="Image" />
+            <img src={Image1} uk-img="true" alt="Marketing one" />
           </div>
         </div>
       </div>
@@ -382,67 +346,67 @@ const SecondPage = () => (
       </div>
       <div className="uk-container">
         <div
-          className="uk-grid uk-grid-large uk-child-width-1-3@m"
+          className="uk-grid uk-grid-large uk-child-width-1-4@m"
           uk-grid="true"
           uk-scrollspy="target: > div; delay: 150; cls: uk-animation-slide-bottom-medium"
         >
           <div className="uk-text-center">
-            <img src={Marketing2} uk-img="true" alt="Image" />
+            <img src={Marketing2} uk-img="true" alt="Marketing one" />
             <h4 className="uk-margin-small-bottom uk-margin-top uk-margin-remove-adjacent">
               Lorem ipsum dolor sit amet
             </h4>
             <p>
-              24/7 support. We’re always here for you no matter what time of
+              24/7 support. We're always here for you no matter what time of
               day.
             </p>
           </div>
           <div className="uk-text-center">
-            <img src={Marketing3} uk-img="true" alt="Image" />
+            <img src={Marketing3} uk-img="true" alt="Marketing three" />
             <h4 className="uk-margin-small-bottom uk-margin-top uk-margin-remove-adjacent">
               Lorem ipsum dolor sit amet
             </h4>
             <p>
-              24/7 support. We’re always here for you no matter what time of
+              24/7 support. We're always here for you no matter what time of
               day.
             </p>
           </div>
           <div className="uk-text-center">
-            <img src={Marketing5} uk-img="true" alt="Image" />
+            <img src={Marketing5} uk-img="true" alt="Marketing five" />
             <h4 className="uk-margin-small-bottom uk-margin-top uk-margin-remove-adjacent">
               Lorem ipsum dolor sit amet
             </h4>
             <p>
-              24/7 support. We’re always here for you no matter what time of
+              24/7 support. We're always here for you no matter what time of
               day.
             </p>
           </div>
           <div className="uk-text-center">
-            <img src={Marketing5} uk-img="true" alt="Image" />
+            <img src={Marketing5} uk-img="true" alt="Marketing five" />
             <h4 className="uk-margin-small-bottom uk-margin-top uk-margin-remove-adjacent">
               Lorem ipsum dolor sit amet
             </h4>
             <p>
-              24/7 support. We’re always here for you no matter what time of
+              24/7 support. We're always here for you no matter what time of
               day.
             </p>
           </div>
           <div className="uk-text-center">
-            <img src={Marketing4} uk-img="true" alt="Image" />
+            <img src={Marketing4} uk-img="true" alt="Marketing four" />
             <h4 className="uk-margin-small-bottom uk-margin-top uk-margin-remove-adjacent">
               Lorem ipsum dolor sit amet
             </h4>
             <p>
-              24/7 support. We’re always here for you no matter what time of
+              24/7 support. We're always here for you no matter what time of
               day.
             </p>
           </div>
           <div className="uk-text-center">
-            <img src={Marketing3} uk-img="true" alt="Image" />
+            <img src={Marketing3} uk-img="true" alt="Marketing three" />
             <h4 className="uk-margin-small-bottom uk-margin-top uk-margin-remove-adjacent">
               Lorem ipsum dolor sit amet
             </h4>
             <p>
-              24/7 support. We’re always here for you no matter what time of
+              24/7 support. We're always here for you no matter what time of
               day.
             </p>
           </div>
@@ -459,165 +423,34 @@ const SecondPage = () => (
           uk-scrollspy="cls: uk-animation-scale-down; target: > div > img; delay: 100"
         >
           <div>
-            <img src={logo1} uk-img="true" alt="Image" />
+            <img src={logo1} uk-img="true" alt="Logo one" />
           </div>
           <div>
-            <img src={logo2} uk-img="true" alt="Image" />
+            <img src={logo2} uk-img="true" alt="Logo two" />
           </div>
           <div>
-            <img src={logo3} uk-img="true" alt="Image" />
+            <img src={logo3} uk-img="true" alt="Logo three" />
           </div>
           <div>
-            <img src={logo4} uk-img="true" alt="Image" />
+            <img src={logo4} uk-img="true" alt="Logo four" />
           </div>
           <div>
-            <img src={logo5} uk-img="true" alt="Image" />
+            <img src={logo5} uk-img="true" alt="Logo five" />
           </div>
           <div>
-            <img src={logo6} uk-img="true" alt="Image" />
+            <img src={logo6} uk-img="true" alt="Logo six" />
           </div>
           <div>
-            <img src={logo7} uk-img="true" alt="Image" />
+            <img src={logo7} uk-img="true" alt="Logo seven" />
           </div>
           <div>
-            <img src={logo7} uk-img="true" alt="Image" />
+            <img src={logo8} uk-img="true" alt="Logo eight" />
           </div>
         </div>
       </div>
     </div>
     {/* <!-- /LOGOS --> */}
-    {/* <!-- FOOTER --> */}
-    <footer className="uk-section uk-section-secondary uk-padding-remove-bottom">
-      <div className="uk-container">
-        <div className="uk-grid uk-grid-large" uk-grid="true">
-          <div className="uk-width-1-2@m">
-            <h5>OUR COMPANY</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud cillum dolore eu fugiat nulla
-              contact to:{" "}
-              <a href="#" title="">
-                info@company.com
-              </a>
-            </p>
-            <div>
-              <a href="" className="uk-icon-button" uk-icon="twitter"></a>
-              <a href="" className="uk-icon-button" uk-icon="facebook"></a>
-              <a href="" className="uk-icon-button" uk-icon="instagram"></a>
-            </div>
-          </div>
-          <div className="uk-width-1-6@m">
-            <h5>PRODUCTS</h5>
-            <ul className="uk-list">
-              <li>Big Data</li>
-              <li>Marketing</li>
-              <li>Analytics</li>
-              <li>AI Lab</li>
-            </ul>
-          </div>
-          <div className="uk-width-1-6@m">
-            <h5>OUR COMPANY</h5>
-            <ul className="uk-list">
-              <li>Team</li>
-              <li>Work</li>
-              <li>Culture</li>
-              <li>Contact Us</li>
-            </ul>
-          </div>
-          <div className="uk-width-1-6@m">
-            <h5>OUR OFFICES</h5>
-            <ul className="uk-list">
-              <li>London</li>
-              <li>Chicago</li>
-              <li>Dubai</li>
-              <li>Brussels</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="uk-text-center uk-padding uk-padding-remove-horizontal">
-        <span className="uk-text-small uk-text-muted">
-          © 2019 Marketing Layout -{" "}
-          <a href="https://github.com/zzseba78/Kick-Off">Created by KickOff</a>{" "}
-          | Built with{" "}
-          <a
-            href="http://getuikit.com"
-            title="Visit UIkit 3 site"
-            target="_blank"
-            uk-tooltip
-          >
-            <span uk-icon="uikit"></span>
-          </a>
-        </span>
-      </div>
-    </footer>
-    {/* <!-- /FOOTER --> */}
-    {/* <!-- OFFCANVAS --> */}
-    <div id="offcanvas-nav" uk-offcanvas="flip: true; overlay: false">
-      <div className="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
-        <button
-          className="uk-offcanvas-close uk-close uk-icon"
-          type="button"
-          uk-close="true"
-        ></button>
-        <ul className="uk-nav uk-nav-default">
-          <li className="uk-active">
-            <a href="#">Active</a>
-          </li>
-          <li className="uk-parent">
-            <a href="#">Parent</a>
-            <ul className="uk-nav-sub">
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-            </ul>
-          </li>
-          <li className="uk-nav-header">Header</li>
-          <li>
-            <a href="#js-options">
-              <span
-                className="uk-margin-small-right uk-icon"
-                uk-icon="icon: table"
-              ></span>{" "}
-              Item
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span
-                className="uk-margin-small-right uk-icon"
-                uk-icon="icon: thumbnails"
-              ></span>{" "}
-              Item
-            </a>
-          </li>
-          <li className="uk-nav-divider"></li>
-          <li>
-            <a href="#">
-              <span
-                className="uk-margin-small-right uk-icon"
-                uk-icon="icon: trash"
-              ></span>{" "}
-              Item
-            </a>
-          </li>
-        </ul>
-        <h3>Title</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-      </div>
-    </div>
-    {/* <!-- /OFFCANVAS --> */}
-  </>
+  </Layout>
 )
 
 export default SecondPage

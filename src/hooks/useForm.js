@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { navigate } from "gatsby"
+//import { navigate } from "gatsby"
 //const axios = require("axios").default
 
 const useForm = (callback, validate) => {
@@ -71,9 +71,9 @@ const useForm = (callback, validate) => {
         }
         setData(data)
         setSuccess(true)
-        resetFormValues()
         setIsSubmitting(true)
-        alert("success")
+        resetFormValues()
+        //alert("success")
       })
       .catch(error => {
         setServerError("There was an error!", error)

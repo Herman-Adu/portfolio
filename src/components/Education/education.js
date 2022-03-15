@@ -1,125 +1,70 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 import { Title } from ".."
 
-const Education = () => {
+const Education = ({ education }) => {
+  //console.log("Education: ", education)
   return (
-    <section id="education" className="uk-section uk-section-default">
-      <div className="uk-container uk-container-center">
+    <section
+      id="education"
+      className="uk-section uk-section-default uk-padding-remove-bottom uk-padding-remove-top"
+    >
+      <div className="uk-container uk-container-center uk-margin-medium-top">
         <div className="uk-container uk-container-xsmall uk-text-center uk-section uk-padding-remove-top uk-padding-remove-bottom">
           <Title title="Education" styleclassName="underline" />
         </div>
-        <div className="uk-section">
-          <div className="uk-container">
+        <div className="uk-section uk-padding-remove-top">
+          <div className="uk-container uk-margin-medium-top">
             <div className="uk-visible-toggle" uk-slider="autoplay: false">
               <div className="uk-position-relative">
                 <div className="uk-slider-container uk-box-shadow-medium uk-background-primary-light">
                   <ul className="uk-slider-items uk-child-width-1-1">
-                    <li>
-                      <div className="uk-grid-collapse" uk-grid="true">
-                        <div className="uk-width-1-2@m">
-                          <StaticImage
-                            src="../../images/middlesex-uni-v5.jpg"
-                            placeholder="blurred"
-                            formats={["AUTO", "WEBP", "AVIF"]}
-                            alt="Image of Herman adu"
-                            loading="eager"
-                            width={800}
-                            height={800}
-                            //style={{ width: "100%", height: "600px" }}
-                          />
-                        </div>
-                        <div className="uk-width-expand@s uk-flex uk-flex-middle">
-                          <div className="uk-padding-large">
-                            <h3 className="uk-text-uppercase uk-h5 uk-letter-spacing-small">
-                              Middlesex University
-                            </h3>
-                            <h2 className="uk-heading-small uk-margin-medium-top">
-                              BSC 2:1 Hons
-                            </h2>
-                            <h3 className="uk-text-uppercase uk-h5 uk-letter-spacing-small">
-                              Computer Communocations with Applied Computing
-                            </h3>
-                            <div>
-                              <p>
-                                My major was in Computer Communications,
-                                Networking and Programming, I decided to also
-                                take on a minor degree halfway through called
-                                Applied Computing to nicely complement my major,
-                                at Middlesex university in North London. An
-                                amazing time in my life met so many great people
-                                and endured one of the biggest learing curves
-                                taken in my life. Yes it was worh it as i belive
-                                that education is the key
-                              </p>
+                    {education.map(item => {
+                      //console.log("Item: ", item)
+                      const { id, image, uni, titleH2, titleH3, text } = item
+
+                      return (
+                        <li key={id}>
+                          <div className="uk-grid-collapse" uk-grid="true">
+                            <div className="uk-width-1-2@m">
+                              <img
+                                src={image}
+                                alt="text"
+                                style={{
+                                  height: "100%",
+                                  width: "100%",
+                                }}
+                              />
                             </div>
-                            <hr className="uk-margin-medium-top uk-separator-small" />
-                            <h3 className="uk-margin-remove uk-text-uppercase uk-h5 uk-letter-spacing-small">
-                              <a href="/">
-                                View Details
-                                <span
-                                  className="uk-margin-left"
-                                  uk-icon="arrow-right"
-                                ></span>
-                              </a>
-                            </h3>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="uk-grid-collapse" uk-grid="true">
-                        <div className="uk-width-1-2@m">
-                          {/*  <img
-                            src="https://source.unsplash.com/2LgJiWdDdO4/800x800"
-                            alt="Image"
-                          /> */}
-                          <StaticImage
-                            src="../../images/middlesex-uni-v3.jpg"
-                            placeholder="blurred"
-                            formats={["AUTO", "WEBP", "AVIF"]}
-                            alt="Image of Herman adu"
-                            loading="eager"
-                            width={1000}
-                            height={1000}
-                            //style={{ height: "600px" }}
-                          />
-                        </div>
-                        <div className="uk-width-expand@s uk-flex uk-flex-middle">
-                          <div className="uk-padding-large">
-                            <h3 className="uk-text-uppercase uk-h5 uk-letter-spacing-small">
-                              Middlesex University
-                            </h3>
-                            <h2 className="uk-heading-small uk-margin-medium-top">
-                              Technology
-                            </h2>
-                            <div>
-                              <p>
-                                During my time at Middlesex University i studied
-                                many subjects but my programming and development
-                                life started here with Microcomputing and c,
-                                MIcroprocessing and c++ as well as software
-                                design with java which was a great starting
-                                block for my career in c/ also HCI human
-                                computer interaction the human element in design
-                                gave me a great starting block to incorporate
-                                HCI into the stsyems i build today
-                              </p>
+                            <div className="uk-width-expand@s uk-flex uk-flex-middle">
+                              <div className="uk-padding-large">
+                                <h3 className="uk-text-uppercase uk-h5 uk-letter-spacing-small">
+                                  {uni}
+                                </h3>
+                                <h2 className="uk-heading-small uk-margin-medium-top">
+                                  {titleH2}
+                                </h2>
+                                <h3 className="uk-text-uppercase uk-h5 uk-letter-spacing-small">
+                                  {titleH3}
+                                </h3>
+                                <div>
+                                  <p>{text}</p>
+                                </div>
+                                <hr className="uk-margin-medium-top uk-separator-small" />
+                                <h3 className="uk-margin-remove uk-text-uppercase uk-h5 uk-letter-spacing-small">
+                                  <a href="/">
+                                    View Details
+                                    <span
+                                      className="uk-margin-left"
+                                      uk-icon="arrow-right"
+                                    ></span>
+                                  </a>
+                                </h3>
+                              </div>
                             </div>
-                            <hr className="uk-margin-medium-top uk-separator-small" />
-                            <h3 className="uk-margin-remove uk-text-uppercase uk-h5 uk-letter-spacing-small">
-                              <a href="/">
-                                View Details
-                                <span
-                                  className="uk-margin-left"
-                                  uk-icon="arrow-right"
-                                ></span>
-                              </a>
-                            </h3>
                           </div>
-                        </div>
-                      </div>
-                    </li>
+                        </li>
+                      )
+                    })}
                   </ul>
                 </div>
 

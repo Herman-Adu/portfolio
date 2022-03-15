@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+//import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { AdminLinks, SocialLinks } from ".."
 
@@ -84,65 +84,12 @@ const OffCanvas = () => {
             </li>
             <li>
               <Link
-                to="/#featured-projects"
+                to="/#contact"
                 //uk-tooltip="title: Projects; pos: bottom-center"
               >
                 Contact Me
               </Link>
             </li>
-
-            {/* Secondary nav not needed yet                
-              <li className="uk-nav-header">SECONDARY</li>
-              <li className="uk-parent">
-                <a>Parent</a>
-                <ul className="uk-nav-sub">
-                  <li>
-                    <a>Sub item</a>
-                  </li>
-                  <li>
-                    <a>Sub item</a>
-                  </li>
-                </ul>
-              </li>
-              <li className="uk-parent">
-                <a>Parent</a>
-                <ul className="uk-nav-sub">
-                  <li>
-                    <a>Sub item</a>
-                  </li>
-                  <li>
-                    <a>Sub item</a>
-                  </li>
-                </ul>
-              </li> */}
-            {/* <li className="uk-nav-header">Featured Pages</li>
-            <li className="uk-active">
-              <Link to="/services">
-                <span
-                  className="uk-margin-small-right"
-                  data-uk-icon="icon: star; ratio: 1.2"
-                />
-                Services
-              </Link>
-            </li>
-            <li className="uk-active">
-              <Link to="/projects">
-                <span
-                  className="uk-margin-small-right"
-                  data-uk-icon="icon: image; ratio: 1.2"
-                />
-                Projects
-              </Link>
-            </li>
-            <li className="uk-active">
-              <Link to="/">
-                <span
-                  className="uk-margin-small-right"
-                  data-uk-icon="icon: info; ratio: 1.2"
-                />
-                Price Plans
-              </Link>
-            </li> */}
 
             <li className="uk-nav-divider" />
             <li className="uk-active">

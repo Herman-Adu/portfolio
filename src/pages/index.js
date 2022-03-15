@@ -1,11 +1,11 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { getImage } from "gatsby-plugin-image"
+//import { getImage } from "gatsby-plugin-image"
 
 import {
   Layout,
   Seo,
-  BackgroundAnimation,
+  //BackgroundAnimation,
   Hero,
   About,
   Projects,
@@ -17,27 +17,54 @@ import {
   Contact,
 } from "../components"
 
+import image from "../images/adudev-hero.jpeg"
 import technologies from "../constants/technologies"
-import heroImage from "../images/hero.jpg"
+import timeline from "../constants/timeline"
+import education from "../constants/education"
+import achievements from "../constants/achievements"
+
+const buttons = [
+  {
+    id: 1,
+    text: `Articles`,
+    slug: "/posts",
+  },
+]
 
 const IndexPage = ({ data }) => {
   //console.log("Query data:", data)
 
+  const homePage = data.allStrapiHomePage
+  //const post = data.allStrapiPost
   const projects = data.allStrapiProject
-  //console.log("Home - Projects:", projects)
+  //console.log("Home Page - homePage:", homePage)
+  //console.log("Home Page - post:", post)
+  //console.log("Home Page - Projects:", projects)
+
+  const aboutSection = homePage.edges.map(function (section) {
+    const {
+      node: { AboutSection },
+    } = section
+
+    //console.log("AboutSection:", AboutSection)
+    return AboutSection
+  })
 
   return (
     <Layout>
       <Seo title="Home" />
-      <Hero image={heroImage} title="AduDev Personal portfolio" />
-      <About />
-
+      <Hero
+        image={image}
+        welcome="AduDev Personal portfolio"
+        callToAction="A full-stack developer innovating one project at a time!"
+        buttons={buttons}
+      />
+      <About aboutSection={aboutSection} />
       <Technologies technologies={technologies} />
-
-      <Timeline />
+      <Timeline timeline={timeline} />
       <Experience />
-      <Education />
-      <Achievements />
+      <Education education={education} />
+      <Achievements achievements={achievements} />
       <Projects projects={projects} />
       <Contact />
       {/* <section>
@@ -93,6 +120,11 @@ export const query = graphql`
               Label
             }
           }
+          AboutSection {
+            SectionTitle
+            title
+            content
+          }
         }
       }
     }
@@ -121,13 +153,6 @@ export const query = graphql`
         node {
           Type
           Time
-          image {
-            file {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
           ImagePath
           Title
           Description

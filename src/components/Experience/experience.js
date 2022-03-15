@@ -8,9 +8,10 @@ const Experience = () => {
         <div className="uk-container uk-container-xsmall uk-text-center uk-section uk-padding-remove-top uk-padding-remove-bottom">
           <Title title="Experience" styleClass="underline" />
         </div>
+        <hr className="uk-divider-icon" />
         <ul uk-accordion="true">
           <li className="uk-open">
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="/">
               <p>AduDev, Start-up 2021 - current</p>
             </a>
             <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
@@ -24,7 +25,7 @@ const Experience = () => {
             </div>
           </li>
           <li>
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="/">
               <p>ION Instutition Of Neurodiversity, Start-up 2021</p>
             </a>
             <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
@@ -37,7 +38,7 @@ const Experience = () => {
             </div>
           </li>
           <li>
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="/">
               <p>H&S Pepper Co, Start-up 2020 - current</p>
             </a>
             <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
@@ -49,16 +50,16 @@ const Experience = () => {
             </div>
           </li>
           <li>
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="/">
               <p>Analyst Programmer Aug 2006 - Jul 2019</p>
             </a>
             <div className="uk-accordion-content uk-margin-medium-left">
               <ul uk-accordion="true">
-                <li class="uk-open">
-                  <a class="uk-accordion-title" href="#">
+                <li className="uk-open">
+                  <a className="uk-accordion-title" href="/">
                     <p>Mobile App Development Jun 2017 - Jul 2019</p>
                   </a>
-                  <div class="uk-accordion-content uk-margin-small-left uk-margin-small-right">
+                  <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
                     <p>
                       Part of a team responsible for, designing, writing and
                       maintaining the Manpower Life mobile application available
@@ -106,10 +107,10 @@ const Experience = () => {
                   </div>
                 </li>
                 <li>
-                  <a class="uk-accordion-title" href="#">
+                  <a className="uk-accordion-title" href="/">
                     <p>Full-Stack Development Jan 2009 - Jun 2017</p>
                   </a>
-                  <div class="uk-accordion-content uk-margin-small-left uk-margin-small-right">
+                  <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
                     <p>
                       Using Test Driven Development, Dependency Injection
                       Frameworks and Agile Methodologies, part of a team
@@ -173,10 +174,10 @@ const Experience = () => {
                   </div>
                 </li>
                 <li>
-                  <a class="uk-accordion-title" href="#">
+                  <a className="uk-accordion-title" href="/">
                     <p>PC & Web Development Aug 2006 - Jan 2009</p>
                   </a>
-                  <div class="uk-accordion-content uk-margin-small-left uk-margin-small-right">
+                  <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
                     <p>
                       Using ASP.NET, C# and SQL programming, responsible for the
                       design, writing, testing and implementation of web based
@@ -280,7 +281,7 @@ const Experience = () => {
             </div>
           </li>
           <li>
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="/">
               <p>Web Designer, Aug 2005 - Apr 2006</p>
             </a>
             <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
@@ -338,7 +339,7 @@ const Experience = () => {
             </div>
           </li>
           <li>
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="/">
               <p>Technical Support, Jun 2004 - Aug 2005</p>
             </a>
             <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
@@ -400,7 +401,7 @@ const Experience = () => {
             </div>
           </li>
           <li>
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="/">
               <p>Technical Support, May 2000 - Apr 2004</p>
             </a>
             <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
@@ -469,7 +470,7 @@ const Experience = () => {
             </div>
           </li>
           <li>
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="/">
               <p>Web Designer, May 2000 - Apr 2002</p>
             </a>
             <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
@@ -496,7 +497,7 @@ const Experience = () => {
             </div>
           </li>
           <li>
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="/">
               <p>Web Designer, Feb 1999 - Aug 2000</p>
             </a>
             <div className="uk-accordion-content uk-margin-small-left uk-margin-small-right">
@@ -518,6 +519,7 @@ const Experience = () => {
             </div>
           </li>
         </ul>
+        <hr className="uk-divider-icon" />
       </div>
     </section>
   )
